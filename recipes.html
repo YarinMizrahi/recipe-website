@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ILfood</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;700&display=swap">
+</head>
+<body>
+    <header>
+        <!-- לוגו עם קישור -->
+        <div class="logo">
+            <a href="index.html">
+                <img src="assent/image/Screenshot 2024-11-06 001304.png" alt="ILfood Logo">
+            </a>
+        </div>
+        
+        <!-- קישורים לעמודים שונים -->
+        <div class="container">
+            <a href="index.html">דף הבית</a>
+            <a href="about.html">עלינו</a>
+            <a href="shere.recipe.html">לשתף מתכון</a>
+            <a href="recipes.html">מתכונים</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="recipes-container">
+            <h1>מתכונים טעימים להכנה בבית</h1>
+
+            <!-- מתכון לפיצה -->
+            <div class="recipe">
+                <h2>מתכון לפיצה</h2>
+                <h3>מרכיבים:</h3>
+                <ul>
+                    <li>2 כוסות קמח</li>
+                    <li>1 כף שמרים יבשים</li>
+                    <li>1 כף סוכר</li>
+                    <li>1 כוס מים חמימים</li>
+                    <li>2 כפות שמן זית</li>
+                    <li>1 כפית מלח</li>
+                    <li>רוטב עגבניות לפיצה</li>
+                    <li>גבינת מוצרלה מגוררת</li>
+                    <li>תוספות לפי הטעם</li>
+                </ul>
+                <h3>אופן ההכנה:</h3>
+                <ol>
+                    <li>בקערה, מערבבים את השמרים עם הסוכר והמים, ומניחים לתסיסה.</li>
+                    <li>מוסיפים את הקמח, שמן הזית והמלח ולשים עד שמתקבל בצק.</li>
+                    <li>מרדדים, מורחים רוטב, מוסיפים גבינה ותוספות.</li>
+                    <li>אופים ב-220 מעלות עד שהגבינה מבעבעת והבצק מזהיב.</li>
+                </ol>
+            </div>
+
+            <!-- מתכון לעוגיות שוקולד צ'יפס -->
+            <div class="recipe">
+                <h2>מתכון לעוגיות שוקולד צ'יפס</h2>
+                <h3>מרכיבים:</h3>
+                <ul>
+                    <li>2 כוסות קמח</li>
+                    <li>1 כפית סודה לשתייה</li>
+                    <li>1 כוס חמאה רכה</li>
+                    <li>1 כוס סוכר חום</li>
+                    <li>1/2 כוס סוכר לבן</li>
+                    <li>1 ביצה גדולה</li>
+                    <li>1 כף תמצית וניל</li>
+                    <li>1 כוס שוקולד צ'יפס</li>
+                </ul>
+                <h3>אופן ההכנה:</h3>
+                <ol>
+                    <li>מחממים תנור ל-180 מעלות.</li>
+                    <li>מערבבים חמאה, סוכר, ביצה ווניל.</li>
+                    <li>מוסיפים קמח וסודה לשתייה ומערבבים עם השוקולד צ'יפס.</li>
+                    <li>יוצרים כדורים ואופים כ-10-12 דקות.</li>
+                </ol>
+            </div>
+
+            <!-- מתכון לבראוניז -->
+            <div class="recipe">
+                <h2>מתכון לבראוניז</h2>
+                <h3>מרכיבים:</h3>
+                <ul>
+                    <li>200 גרם שוקולד מריר</li>
+                    <li>100 גרם חמאה</li>
+                    <li>1 כוס סוכר</li>
+                    <li>3 ביצים</li>
+                    <li>1 כוס קמח</li>
+                    <li>1 כף אבקת קקאו</li>
+                    <li>קורט מלח</li>
+                    <li>1/2 כוס אגוזים קצוצים (אופציונלי)</li>
+                </ul>
+                <h3>אופן ההכנה:</h3>
+                <ol>
+                    <li>מחממים תנור ל-180 מעלות וממיסים שוקולד וחמאה.</li>
+                    <li>מערבבים את השוקולד המומס עם סוכר וביצים.</li>
+                    <li>מוסיפים קמח, קקאו, מלח ואגוזים.</li>
+                    <li>אופים כ-20-25 דקות עד שהקיסם יוצא מעט לח.</li>
+                </ol>
+            </div>
+
+            <!-- המתכונים שנשלחו -->
+            <div id="submitted-recipes">
+                <h2>המתכונים שלך:</h2>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Retrieve the stored recipes from localStorage and display them
+        window.onload = function() {
+    const storedRecipes = JSON.parse(localStorage.getItem("recipes")) || [];
+
+    // Display all stored recipes
+    const recipesContainer = document.getElementById("submitted-recipes");
+
+    // Loop through each recipe and display it
+    storedRecipes.forEach(recipe => {
+        const recipeDiv = document.createElement("div");
+        recipeDiv.classList.add("recipe");
+        
+        recipeDiv.innerHTML = `
+            <h3>שם המגיש: ${recipe.name}</h3>
+            <p><strong>אימייל:</strong> ${recipe.email}</p>
+            <h3>שם המתכון: ${recipe.recipeTitle}</h3>
+            <h4>מרכיבים:</h4>
+            <p>${recipe.ingredients}</p>
+            <h4>הוראות הכנה:</h4>
+            <p>${recipe.instructions}</p>
+        `;
+        
+        recipesContainer.appendChild(recipeDiv);
+    });
+};
+
+
+        // Store new recipe in localStorage
+        function storeRecipe() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const recipeTitle = document.getElementById("recipe-title").value;
+            const ingredients = document.getElementById("ingredients").value;
+            const instructions = document.getElementById("instructions").value;
+
+            if (!name || !email || !recipeTitle || !ingredients || !instructions) {
+                alert("אנא מלא את כל השדות.");
+                return;
+            }
+
+            const newRecipe = {
+                name: name,
+                email: email,
+                recipeTitle: recipeTitle,
+                ingredients: ingredients,
+                instructions: instructions
+            };
+
+            // Get existing recipes or initialize an empty array
+            const storedRecipes = JSON.parse(localStorage.getItem("recipes")) || [];
+
+            // Add the new recipe to the array
+            storedRecipes.push(newRecipe);
+
+            // Save the updated recipes back to localStorage
+            localStorage.setItem("recipes", JSON.stringify(storedRecipes));
+
+            // Reset form after submission
+            document.querySelector("form").reset();
+
+            // Reload the page to display the new recipe
+            location.reload();
+        }
+    </script>
+</body>
+</html>

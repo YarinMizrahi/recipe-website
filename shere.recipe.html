@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>שתף מתכון</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+     function displayRecipe() {
+    // Get values from the form fields
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const recipeTitle = document.getElementById("recipe-title").value;
+    const ingredients = document.getElementById("ingredients").value;
+    const instructions = document.getElementById("instructions").value;
+
+    // Check if all fields are filled
+    if (!name || !email || !recipeTitle || !ingredients || !instructions) {
+        alert("אנא מלא את כל השדות.");
+        return;
+    }
+
+    // Create a new recipe object
+    const newRecipe = {
+        name: name,
+        email: email,
+        recipeTitle: recipeTitle,
+        ingredients: ingredients,
+        instructions: instructions
+    };
+
+    // Log the recipe to the console with the title "adddata"
+    console.log("adddata:", newRecipe);
+
+    // Retrieve the current recipes from localStorage or initialize an empty array
+    const storedRecipes = JSON.parse(localStorage.getItem("recipes")) || [];
+
+    // Add the new recipe to the array
+    storedRecipes.push(newRecipe);
+
+    // Save the updated recipes array back to localStorage
+    localStorage.setItem("recipes", JSON.stringify(storedRecipes));
+
+    // Optional: Clear the form after submission
+    document.querySelector("form").reset();
+    
+    // Redirect to the recipes page to display the submitted recipe
+    window.location.href = "recipes.html"; // Adjust the link if necessary
+}
+
+
+    </script>
+</head>
+<body>
+    <header>
+        <!-- לוגו עם קישור -->
+        <div class="logo">
+            <a href="index.html">
+                <img src="assent/image/Screenshot 2024-11-06 001304.png" alt="ILfood Logo">
+            </a>
+        </div>
+        
+        <!-- קישורים לעמודים שונים -->
+        <div class="container">
+            <a href="index.html">דף הבית</a>
+            <a href="about.html">עלינו</a>
+            <a href="shere.recipe.html">לשתף מתכון</a>
+            <a href="recipes.html">מתכונים</a>
+        </div>
+    </header>
+
+<main>
+    <div class="share-wrapper">
+        <div class="share-container">
+            <h1>שתף מתכון</h1>
+            <form onsubmit="event.preventDefault(); displayRecipe();">
+                <label for="name">שם מלא:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">אימייל:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="recipe-title">שם המתכון:</label>
+                <input type="text" id="recipe-title" name="recipe-title" required>
+
+                <label for="ingredients">מרכיבים:</label>
+                <textarea id="ingredients" name="ingredients" rows="4" required></textarea>
+
+                <label for="instructions">הוראות הכנה:</label>
+                <textarea id="instructions" name="instructions" rows="6" required></textarea>
+
+                <button type="submit">שלח מתכון</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-container">
+        <ul>
+            <li><a href="index.html">דף הבית</a></li>
+            <li><a href="about.html">עלינו</a></li>
+            <li><a href="shere.recipe.html">שתף מתכון</a></li>
+            <li><a href="recipes.html">מתכונים</a></li>
+        </ul>
+    </div>
+</footer>
+</body>
+</html>

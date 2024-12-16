@@ -1,0 +1,362 @@
+body{
+    background-color: black;
+    margin: 0;
+    font-family: 'Assistant', sans-serif;
+    direction: rtl; /* מגדיר את כיוון הטקסט לכל האתר */
+    text-align: right; /* יישור כל הטקסטים לימין */
+}
+
+.recipe ul, .recipe ol {
+    padding-right: 20px;
+    padding-left: 0;
+}
+
+.recipe h2, .recipe h3, .recipe p, .recipe li {
+    text-align: right; /* יישור כל תתי הכותרות והטקסטים לימין */
+}
+
+/* עיצוב כללי לכותרת */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: black;
+}
+
+/* עיצוב הלוגו עם בורדר עגול */
+.logo img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 5px solid #ccc;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.logo img:hover {
+    border-color: gray; /* צבע בורדר בהובר */
+}
+
+/* עיצוב הקישורים בכותרת */
+.container a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s;
+    text-align: center;
+    font-size: x-large;
+    
+}
+
+.container a:hover {
+    color: #5e5e5e;
+}
+/* עיצוב כללי לקרוסלה */
+/* עיצוב כללי לקרוסלה */
+.recipe-carousel {
+    overflow: hidden;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* עיצוב המסלול של התמונות */
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+/* עיצוב כל תמונה */
+.carousel-track a {
+    min-width: 100%; /* מוודא שכל תמונה תתפוס את כל רוחב הקרוסלה */
+    transition: opacity 0.5s ease;
+}
+
+.carousel-track img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+h1{
+color: white;
+font-size: xx-large;
+text-align: center;
+font-family: monospace;
+
+}
+.recipe-container {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: right;
+}
+
+h1 {
+    color: #f7c42f; /* צבע כותרת */
+    text-align: center;
+}
+
+ol {
+    margin-right: 20px;
+    padding-right: 20px;
+}
+
+p {
+    text-align: center;
+}
+
+.recipe-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+.share-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.share-container {
+    background-color: #333;
+    color: #fff;
+    padding: 30px;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: right;
+}
+
+h1 {
+    color: #f7c42f;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: brown;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #e6b121;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-container ul li {
+    margin: 0 15px;
+}
+
+.footer-container ul li a {
+    color: #f7c42f;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.footer-container ul li a:hover {
+    color: #e6b121;
+}
+.home-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+.home-container {
+    background-color: #fff;
+    max-width: 800px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: right;
+}
+
+h1 {
+    color: gray;
+    text-align: center;
+}
+
+h2 {
+    color: gray;
+    margin-top: 20px;
+}
+
+p {
+    line-height: 1.6;
+    margin: 15px 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+ul li strong {
+    color: gray;
+}
+
+.recipes-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: right;
+}
+
+h1 {
+    text-align: center;
+    color: #d46a6a;
+    margin-bottom: 30px;
+}
+
+.recipe {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.recipe h2 {
+    color: #d46a6a;
+    margin-top: 0;
+}
+
+.recipe h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.recipe ul {
+    list-style-type: disc;
+    padding-right: 20px;
+}
+
+.recipe ol {
+    list-style-type: decimal;
+    padding-right: 20px;
+}
+
+.recipe li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+
+
+.about-container {
+    position: relative;
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.about-content {
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+
+.slide.active {
+    left: 0;
+    opacity: 1;
+}
+#website-title {
+    font-family: 'Assistant', sans-serif; /* גופן מודרני וקריא */
+    font-size: 36px; /* גודל גופן גדול */
+    font-weight: 700; /* משקל גופן Bold */
+    text-align: center; /* מיישר את הכותרת למרכז */
+    color: #2c3e50; /* צבע כהה לקריאות */
+    text-transform: uppercase; /* מגדיל את האותיות ל-uppercase */
+    letter-spacing: 2px; /* רווח בין האותיות */
+    margin-top: 20px; /* רווח מהחלק העליון */
+    margin-bottom: 20px; /* רווח מתחת לכותרת */
+    padding: 10px 0; /* ריפוד למעלה ולמטה */
+    background-color: white; /* צבע רקע חמים (צהוב) */
+    border-radius: 10px; /* פינות מעוגלות */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* הצללה עדינה */
+}
+
+#website-title:hover {
+    color: #fff; /* הופך את הצבע ללבן כאשר מעבירים את העכבר */
+    background-color: brown; /* משנה את הרקע לצבע כתום */
+    cursor: pointer; /* משנה את הסמן ליד כותרת */
+}
